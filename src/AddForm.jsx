@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 // import List from './List';
 
 const AddForm = () => {
   const [input, setInput] = useState({ name: "", textarea: "", option: "" });
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(getLocalItems());
   const [edit, setEditData] = useState(null);
+
+  useEffect(()=>{
+    localStorage.setItem("taskList", JSON.stringify(data))
+  },[data])
+
 
   const handleSbumit = (e) => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -13,7 +18,7 @@ const AddForm = () => {
   const submit = (e) => {
     e.preventDefault();
     if (input.name === "" || input.textarea === "" || input.option === "") {
-      alert("plese fill all field");
+      alert("please fill all fields");
     } else {
       if (edit !== null) {
         const newData = data.map((item, ind) =>
@@ -29,7 +34,6 @@ const AddForm = () => {
         setEditData(null);
       } else {
         setData([...data, input]);
-        console.log(data);
       }
       setInput({ name: "", textarea: "", option: "" });
     }
@@ -44,12 +48,23 @@ const AddForm = () => {
     const newData = data.filter((item, i) => i !== index);
     setData(newData);
   };
+
   const AllDelete = () => {
     setData([]);
   };
+  
+  function getLocalItems () {
+    let list = localStorage.getItem("taskList")
+    if(list){
+      return JSON.parse(list)
+    }else{
+      return[]
+    }
+  }
   return (
-    <div>
-      <form>
+    <div className="container">
+    <div className="form-container">
+      <form className="form">
         <input
           type="text"
           value={input.name}
@@ -64,27 +79,33 @@ const AddForm = () => {
           placeholder="Enter your description"
           onChange={handleSbumit}
         />
+        <div className="option">
         <select name="option" value={input.option} onChange={handleSbumit}>
+          <option value="">Priority Level</option>
           <option value="low">Low</option>
           <option value="medium">Medium</option>
           <option value="high">High</option>
         </select>
-        <button onClick={submit}>{edit === null ? "Add" : "Edit"}</button>
+        <button onClick={submit} className="button">{edit === null ? "Add List" : "Edit List"}</button>
+        </div>
       </form>
       {data.map((item, index) => {
         return (
           <div key={index}>
-            <h3 >
-              {item.name}
-              {item.textarea}
-              {item.option}
-              <button onClick={() => Edit(index)}>Edit</button>
-              <button onClick={() => del(index)}>Del</button>
-            </h3>
+            <div className="list-item" >
+              <p>{item.name}</p>
+              <p>{item.textarea}</p>
+              <p>{item.option}</p>
+              <div className="btn-list">
+              <button onClick={() => Edit(index)} className="btn">Edit</button>
+              <button onClick={() => del(index)} className="btn-del">Delete</button>
+              </div>
+            </div>
           </div>
         );
       })}
-      {data.length >= 1 && <button onClick={AllDelete}>All Delete</button>}
+      {data.length >= 1 && (<button onClick={AllDelete} className="btn-btn">All Delete</button>)}
+      </div>
     </div>
   );
 };

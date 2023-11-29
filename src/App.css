@@ -1,0 +1,122 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  width:100vw;
+  height: 100vh;
+  background: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.form-container{
+  border:2px solid black;
+  height:90vh;
+  width: 70vw;
+display: flex;
+align-items: center;
+flex-direction: column;
+gap: 2vw;
+padding-top:2vw;
+border-radius:15px;
+background-color: rgb(102, 87, 60);
+}
+.form{
+display: flex;
+align-items: center;
+flex-direction: column;
+gap: 2vw;
+background-color: rgb(102, 87, 60);
+}
+.form input{
+  width: 60vw;
+  height: 8vh;
+  font-size: 1.6vw;
+  border-radius: 10px;
+  padding: 1vw;
+
+}
+.option{
+  width: 60vw;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+
+}
+
+.option select{
+  width: 10vw;
+  height: 6vh;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-radius: 10px;
+}
+.option button {
+  width: 10vw;
+  height: 6vh;
+  font-size: 1.7vw;
+  border: 1px solid gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color:white;
+  background-color: rgb(15, 15, 168);
+}
+.list-item{
+  width: 60vw;
+  height: 3vw;
+  /* margin-top: 3vw; */
+  border-radius: 10px;
+  background-color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.8vw; 
+  padding-left: 1vw;
+}
+.btn-list{
+  padding: 2%;
+
+}
+.btn{
+  height: 2.6vw;
+  width: 5vw;
+  gap:2vw;
+  margin: 0.2vw;
+  font-size: 1.4vw; 
+  border-radius: 10px;
+  background-color: rgb(6, 85, 23);
+  color: white;
+}
+.btn-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-del{
+  width: 6vw;
+  height: 2.6vw;
+  font-size: 1.7vw;
+  border: 1px solid gray;
+  border-radius: 10px;
+  color:white;
+  background-color:red;
+}
+.btn-btn{
+  width: 8vw;
+  height: 2.6vw;
+  font-size: 1.7vw;
+  border: 1px solid gray;
+  border-radius: 10px;
+  color:white;
+  background-color:red;
+}
