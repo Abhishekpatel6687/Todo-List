@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import List from './List';
 
 const AddForm = () => {
   const [input, setInput] = useState({ name: "", textarea: "", option: "" });
@@ -44,7 +43,7 @@ const AddForm = () => {
     setEditData(index);
   };
 
-  const del = (index) => {
+  const Delete = (index) => {
     const newData = data.filter((item, i) => i !== index);
     setData(newData);
   };
@@ -98,7 +97,7 @@ const AddForm = () => {
               <p>{item.option}</p>
               <div className="btn-list">
               <button onClick={() => Edit(index)} className="btn">Edit</button>
-              <button onClick={() => del(index)} className="btn-del">Delete</button>
+              <button onClick={() => Delete(index)} className="btn-del">Delete</button>
               </div>
             </div>
           </div>
