@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import TaskList from "./Components/TaskList";
-import "./App.css"
+import "./App.css";
 
 const AllData = createContext();
 
@@ -66,10 +66,8 @@ const AddTask = () => {
   const handleToggleTodo = (index) => {
     const newData = [...data];
     newData[index].checked = !newData[index].checked;
-    setData(newData)
-
-
-  }
+    setData(newData);
+  };
   return (
     <div className="container">
       <div className="form-container">
@@ -105,7 +103,7 @@ const AddTask = () => {
             edit: Edit,
             deleteList: Delete,
             AllDelete: AllDelete,
-            handleToggleTodo:handleToggleTodo,
+            handleToggleTodo: handleToggleTodo,
           }}
         >
           <TaskList />
