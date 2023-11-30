@@ -63,6 +63,13 @@ const AddTask = () => {
       return [];
     }
   }
+  const handleToggleTodo = (index) => {
+    const newData = [...data];
+    newData[index].checked = !newData[index].checked;
+    setData(newData)
+
+
+  }
   return (
     <div className="container">
       <div className="form-container">
@@ -88,7 +95,7 @@ const AddTask = () => {
               <option value="high">High</option>
             </select>
             <button onClick={submit} className="button">
-              {edit === null ? "Add List" : "Edit List"}
+              {edit === null ? "Add Task" : "Edit Task"}
             </button>
           </div>
         </form>
@@ -98,6 +105,7 @@ const AddTask = () => {
             edit: Edit,
             deleteList: Delete,
             AllDelete: AllDelete,
+            handleToggleTodo:handleToggleTodo,
           }}
         >
           <TaskList />

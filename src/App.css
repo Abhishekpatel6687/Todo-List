@@ -36,7 +36,7 @@ background-color: rgb(102, 87, 60);
   height: 3.2vw;
   font-size: 1.8vw;
   border-radius: 10px;
-  padding: 1vw;
+  padding-left: 1vw;
 
 }
 .form textarea{
@@ -44,11 +44,10 @@ background-color: rgb(102, 87, 60);
   height: 3.4vw;
   font-size: 1.8vw;
   border-radius: 10px;
-  padding: 1vw;;
+  padding-left: 1vw;
 }
 .option{
   width: 60vw;
-  font-size: 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -59,7 +58,7 @@ background-color: rgb(102, 87, 60);
 .option select{
   width: 10vw;
   height: 2.8vw;
-  font-size: 18px;
+  font-size: 1.4vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,23 +76,33 @@ background-color: rgb(102, 87, 60);
   border-radius: 10px;
   color:white;
   background-color: rgb(15, 15, 168);
+  cursor: pointer;
+    transition: 0.6s;
+}
+.option button:hover {
+  background-color:#f6007d;
+  color:  rgb(16, 16, 58);
+
 }
 .list-item{
   width: 60vw;
   height: 3vw;
-  /* margin-top: 3vw; */
   border-radius: 10px;
   background-color: aqua;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 1.8vw; 
-  padding-left: 1vw;
+  padding-left: 1vw; 
+ 
+}
+.checked{
+margin-right: 10px;
 }
 .btn-list{
   padding: 2%;
-
 }
+
 .btn{
   height: 2.6vw;
   width: 5vw;
@@ -103,6 +112,7 @@ background-color: rgb(102, 87, 60);
   border-radius: 10px;
   background-color: rgb(6, 85, 23);
   color: white;
+  cursor: pointer;
 }
 .btn-list{
     display: flex;
@@ -117,6 +127,7 @@ background-color: rgb(102, 87, 60);
   border-radius: 10px;
   color:white;
   background-color:red;
+  cursor: pointer;
 }
 .btn-btn{
   width: 8vw;
@@ -126,4 +137,147 @@ background-color: rgb(102, 87, 60);
   border-radius: 10px;
   color:white;
   background-color:red;
+  cursor: pointer;
+  transition: 0.3s;
 }
+.btn-btn:hover {
+  background-color:rgb(218, 137, 137);
+  color:black;
+  transform: scale(0.9, 0.9);
+
+}
+
+
+@media(max-width: 1000px){
+  .form-container{
+    width: 80vw;
+  gap: 3vw;
+  }
+  .form{
+  gap: 3vw;
+  }
+  .form input{
+    height: 5vw;
+    width: 70vw;
+    font-size: 3vw;
+    padding-left: 2vw;
+  }
+  .form textarea{
+    height: 5vw;
+    width: 70vw;
+    font-size: 3vw;
+    padding-left: 2vw;
+  }
+  .option{
+width: 70vw;
+  }
+  
+  .option select{
+    width: 19vw;
+    height: 5vw;
+    font-size: 2.4vw;
+    display: flex;
+  }
+  .option button {
+    width: 16vw;
+    height: 5vw;
+    font-size: 2.6vw;
+  }
+  .list-item{
+    width: 70vw;
+    height: 5vw;
+    font-size: 2.8vw;  
+  }
+  .checked{
+  margin-right: 10px;
+  }
+  .btn-list{
+    padding: 2%;
+  }
+  
+  .btn{
+    height: 4vw;
+    width: 6vw;
+    margin: 0.2vw;
+    font-size: 2.4vw; 
+  }
+
+  .btn-del{
+    width: 8vw;
+    height: 4vw;
+    font-size: 2.5vw;
+  }
+  .btn-btn{
+    width: 14vw;
+    height: 4.4vw;
+    font-size: 2.8vw;
+  }
+
+} 
+
+@media(max-width: 650px){
+  .form-container{
+    width: 85vw;
+  gap: 3.6vw;
+  }
+  .form{
+  gap: 3.6vw;
+  }
+  .form input{
+    height: 9vw;
+    width: 80vw;
+    font-size: 4.4vw;
+    padding-left: 2.2vw;
+  }
+  .form textarea{
+    height: 9vw;
+    width: 80vw;
+    font-size: 4.4vw;
+    padding-left: 2.2vw;
+  }
+  .option{
+width: 80vw;
+  }
+  
+  .option select{
+    width: 24vw;
+    height: 6.4vw;
+    font-size: 3.2vw;
+    display: flex;
+  }
+  .option button {
+    width: 20vw;
+    height: 6.4vw;
+    font-size: 3.4vw;
+  }
+  .list-item{
+    width: 80vw;
+    height: 8vw;
+    font-size: 3.8vw;  
+  }
+  .checked{
+  margin-right: 10px;
+  }
+  .btn-list{
+    padding: 1%;
+  }
+  
+  .btn{
+    height: 6vw;
+    width: 8vw;
+    margin: 0.2vw;
+    font-size: 3.4vw; 
+  }
+
+  .btn-del{
+    width: 12vw;
+    height: 6vw;
+    font-size: 3.5vw;
+  }
+  .btn-btn{
+    width: 20vw;
+    height: 6.2vw;
+    font-size: 3.8vw;
+  }
+
+} 
